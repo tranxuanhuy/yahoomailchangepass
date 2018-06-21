@@ -25,7 +25,7 @@ namespace yahoomail
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(40));
             
             driver.Navigate().GoToUrl("https://login.yahoo.com");
-            driver.FindElement(By.Id("login-username")).SendKeys("AndradexzBella3637@yahoo.com");
+            driver.FindElement(By.Id("login-username")).SendKeys("SteelexsVan3387@yahoo.com");
             driver.FindElement(By.Id("login-username")).Submit();
             wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.Id("login-passwd")));
             driver.FindElement(By.Id("login-passwd")).SendKeys("tai01234553435");
@@ -37,8 +37,14 @@ namespace yahoomail
             driver.FindElement(By.Id("cpwd-confirm-password")).SendKeys("B1nbin!@#");
             driver.FindElement(By.Id("cpwd-confirm-password")).SendKeys(Keys.Enter);
 
-            driver.FindElement(By.Name("commChannel")).SendKeys("getcryptotab.com@starbuck.cc");
-            
+            //add recorevry mail
+            driver.FindElement(By.Name("commChannel")).SendKeys("SteelexsVan3387@starbuck.cc");
+            driver.FindElement(By.Name("commChannel")).SendKeys(Keys.Enter);
+
+            driver.Navigate().GoToUrl("https://login.yahoo.com/account/security?.scrumb=BhdLnzjeGqC");
+            driver.FindElement(By.Id("toggle-status")).Click();
+            IWebElement body = driver.FindElement(By.TagName("body"));
+            body.SendKeys(Keys.Tab+Keys.Enter);
             Console.Read();
         }
 
